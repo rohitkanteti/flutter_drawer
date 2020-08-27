@@ -1,5 +1,20 @@
 import 'package:flutter/material.dart';
 
+Widget addOption(IconData img, String text) {
+  return ListTile(
+    title: Row(
+      children: [Icon(img), Text('$text')],
+    ),
+    onTap: () {
+      // Update the state of the app
+      // ...
+      // Then close the drawer
+      BuildContext context;
+      Navigator.pop(context);
+    },
+  );
+}
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -40,139 +55,19 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.inbox), Text('Primary')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.group), Text('Social')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.local_offer), Text('Promotions')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.info_outline), Text('Updates')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.forum), Text('Forums')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
+            addOption(Icons.inbox, 'Primary'),
+            addOption(Icons.group, 'Social'),
+            addOption(Icons.local_offer, 'Promotions'),
+            addOption(Icons.info_outline, 'Updates'),
+            addOption(Icons.forum, 'Forums'),
             Text('All Labels'),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.star), Text('Starred')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.access_time), Text('Snoozed')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.label), Text('Important')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.send), Text('Sent')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.near_me), Text('Scheduled')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.assignment_return), Text('Outbox')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: Row(
-                children: [Icon(Icons.drafts), Text('Drafts')],
-              ),
-              onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
+            addOption(Icons.star, 'Starred'),
+            addOption(Icons.access_time, 'Snoozed'),
+            addOption(Icons.label, 'Important'),
+            addOption(Icons.send, 'Sent'),
+            addOption(Icons.near_me, 'Scheduled'),
+            addOption(Icons.assignment_return, 'Outbox'),
+            addOption(Icons.drafts, 'Drafts'),
           ],
         ),
       ),
