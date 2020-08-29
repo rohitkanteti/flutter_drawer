@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
-Widget addOption(IconData img, String text) {
+Widget addOption(IconData img, String text, context) {
   return ListTile(
     title: Row(
-      children: [Icon(img), Text('$text')],
+      children: [
+        Icon(
+          img,
+          color: Colors.grey[800],
+        ),
+        Text(
+          '      $text',
+          style: TextStyle(color: Colors.grey[800]),
+        )
+      ],
     ),
     onTap: () {
-      // Update the state of the app
-      // ...
-      // Then close the drawer
-      BuildContext context;
       Navigator.pop(context);
     },
   );
@@ -37,37 +42,47 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Gmail Drawer')),
+      appBar: AppBar(
+          title: Text(
+        'Gmail Drawer',
+      )),
       body: Center(child: Text('Hello')),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             SizedBox(
-              height: 100.0,
+              height: 90.0,
               child: DrawerHeader(
                 child: Text(
                   'Gmail',
-                  style: TextStyle(color: Colors.red, fontSize: 30.0),
+                  style: TextStyle(
+                      color: Colors.red,
+                      fontSize: 30.0,
+                      fontFamily: 'Noto Sans SC'),
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                 ),
               ),
             ),
-            addOption(Icons.inbox, 'Primary'),
-            addOption(Icons.group, 'Social'),
-            addOption(Icons.local_offer, 'Promotions'),
-            addOption(Icons.info_outline, 'Updates'),
-            addOption(Icons.forum, 'Forums'),
-            Text('All Labels'),
-            addOption(Icons.star, 'Starred'),
-            addOption(Icons.access_time, 'Snoozed'),
-            addOption(Icons.label, 'Important'),
-            addOption(Icons.send, 'Sent'),
-            addOption(Icons.near_me, 'Scheduled'),
-            addOption(Icons.assignment_return, 'Outbox'),
-            addOption(Icons.drafts, 'Drafts'),
+            addOption(Icons.inbox, 'Primary', context),
+            addOption(Icons.group, 'Social', context),
+            addOption(Icons.local_offer, 'Promotions', context),
+            addOption(Icons.info_outline, 'Updates', context),
+            addOption(Icons.forum, 'Forums', context),
+            Text(
+              '      ALL LABELS',
+              style: TextStyle(color: Colors.grey[850]),
+              //textAlign: TextAlign.left,
+            ),
+            addOption(Icons.star, 'Starred', context),
+            addOption(Icons.access_time, 'Snoozed', context),
+            addOption(Icons.label, 'Important', context),
+            addOption(Icons.send, 'Sent', context),
+            addOption(Icons.near_me, 'Scheduled', context),
+            addOption(Icons.assignment_return, 'Outbox', context),
+            addOption(Icons.drafts, 'Drafts', context),
           ],
         ),
       ),
