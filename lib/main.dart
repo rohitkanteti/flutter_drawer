@@ -28,6 +28,7 @@ Widget addOption2(IconData img, String text, context) {
   return ListTile(
     title: Container(
       height: 50.0,
+      width: 80.0,
       decoration: BoxDecoration(
         color: Colors.red.withOpacity(0.35),
         borderRadius: BorderRadius.only(
@@ -54,7 +55,7 @@ Widget addOption2(IconData img, String text, context) {
             width: 180.0,
             child: Container(
               child: Padding(
-                padding: EdgeInsets.only(left: 80.0),
+                padding: EdgeInsets.only(left: 70.0),
                 child: Center(
                   child: Text(
                     '99+',
@@ -115,15 +116,15 @@ class MyHomePage extends StatelessWidget {
                   'Gmail',
                   style: TextStyle(
                       color: Colors.red,
-                      fontSize: 30.0,
+                      fontSize: 20.0,
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold),
                 ),
               ),
             ),
-            Divider(
-              thickness: 1.0,
-            ),
+            // Divider(
+            //   thickness: 1.0,
+            // ),
             ListTile(
               title: Container(
                 height: 50.0,
@@ -151,7 +152,7 @@ class MyHomePage extends StatelessWidget {
                     ),
                     SizedBox(
                       height: 25.0,
-                      width: 180.0,
+                      width: 175.0,
                       child: Container(
                         child: Padding(
                           padding: EdgeInsets.only(left: 80.0),
